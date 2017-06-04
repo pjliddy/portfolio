@@ -29,7 +29,7 @@ body {
   }
 
   .navbar-collapse {
-    border-color: c($white, .02);
+    border-color: fade-out($white, .02);
   }
 
   .navbar-toggle {
@@ -42,22 +42,22 @@ body {
     &:focus,
     &:hover {
       background-color: $theme-primary;
+      border: $theme-primary;
+      color: $theme-base;
     }
   }
 
   .nav {
-    li {
-      a {
-        @include heading-font;
-        font-weight: 400;
-        letter-spacing: 1px;
-        color: $white;
+    li a {
+      @include heading-font;
+      color: $white;
+      font-weight: 400;
+      letter-spacing: 1px;
 
-        &:focus,
-        &:hover {
-          color: $theme-primary;
-          outline: none;
-        }
+      &:focus,
+      &:hover {
+        color: $theme-primary;
+        outline: none;
       }
     }
   }
@@ -79,21 +79,21 @@ body {
 @media(min-width:768px) {
   .navbar-custom {
     background-color: transparent;
-    padding: 25px 0;
-    -webkit-transition: padding 0.3s;
-    -moz-transition: padding 0.3s;
-    transition: padding 0.3s;
     border: 0;
+    padding: 25px 0;
+    -moz-transition: padding 0.2s;
+    -webkit-transition: padding 0.2s;
+    transition: padding 0.2s;
 
     .navbar-brand {
       font-size: 2em;
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
-      transition: all 0.3s;
+      -moz-transition: all 0.2s;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
     }
 
     .navbar-nav > .active > a {
-      border-radius: 3px;
+      border-radius: 0;
     }
   }
 }
@@ -125,8 +125,8 @@ footer {
 
   ul.quicklinks {
     @include heading-font;
-    margin-bottom: 0;
     line-height: 40px;
+    margin-bottom: 0;
     text-transform: none;
   }
 }
@@ -137,15 +137,15 @@ ul.social-buttons {
 
   li {
     a {
-      display: block;
       background-color: $theme-base;
-      height: 40px;
-      width: 40px;
       border-radius: 100%;
-      font-size: 20px;
-      line-height: 40px;
       color: $white;
+      display: block;
+      font-size: 20px;
+      height: 40px;
+      line-height: 40px;
       outline: none;
+      width: 40px;
       -webkit-transition: all 0.3s;
       -moz-transition: all 0.3s;
       transition: all 0.3s;
@@ -154,7 +154,7 @@ ul.social-buttons {
       &:focus,
       &:hover {
         background-color: $theme-base;
-        color: $theme-primary
+        color: $theme-primary;
       }
     }
   }
@@ -229,9 +229,9 @@ h6 {
 .btn-xl {
   @include button-variant($white, $theme-primary, $theme-primary);
   @include heading-font;
-  font-weight: 700;
   border-radius: 3px;
   font-size: 18px;
+  font-weight: 700;
   padding: 20px 40px;
 }
 
@@ -250,21 +250,21 @@ header {
   text-align: center;
 
   .intro-text {
-    padding-top: 100px;
     padding-bottom: 50px;
+    padding-top: 100px;
 
     .intro-lead-in {
       @include serif-font;
-      font-style: italic;
       font-size: 22px;
+      font-style: italic;
       line-height: 22px;
       margin-bottom: 25px;
     }
 
     .intro-heading {
       @include heading-font;
-      font-weight: 700;
       font-size: 50px;
+      font-weight: 700;
       line-height: 50px;
       margin-bottom: 25px;
     }
@@ -274,21 +274,21 @@ header {
 @media(min-width:768px) {
   header {
     .intro-text {
-      padding-top: 300px;
       padding-bottom: 200px;
+      padding-top: 300px;
 
       .intro-lead-in {
         @include serif-font;
-        font-style: italic;
         font-size: 40px;
+        font-style: italic;
         line-height: 40px;
         margin-bottom: 25px;
       }
 
       .intro-heading {
         @include heading-font;
-        font-weight: 700;
         font-size: 75px;
+        font-weight: 700;
         line-height: 75px;
         margin-bottom: 50px;
       }
@@ -301,17 +301,17 @@ section {
 
   h2.section-heading {
     font-size: 40px;
-    margin-top: 0;
     margin-bottom: 15px;
+    margin-top: 0;
   }
 
   h3.section-subheading {
-    font-size: 16px;
     @include serif-font;
-    text-transform: none;
+    font-size: 16px;
     font-style: italic;
     font-weight: 400;
     margin-bottom: 75px;
+    text-transform: none;
   }
 }
 @media(min-width:768px) {
@@ -332,33 +332,33 @@ section {
 
     .portfolio-link {
       display: block;
-      position: relative;
-      max-width: 400px;
       margin: 0 auto;
+      max-width: 400px;
+      position: relative;
 
       .portfolio-hover {
         background: fade-out($theme-primary, .9);
-        position: absolute;
-        width: 100%;
         height: 100%;
         opacity: 0;
-        transition: all ease 0.5s;
+        position: absolute;
+        width: 100%;
         -webkit-transition: all ease 0.5s;
         -moz-transition: all ease 0.5s;
+        transition: all ease 0.5s;
 
         &:hover {
           opacity: 1;
         }
 
         .portfolio-hover-content {
-          position: absolute;
-          width: 100%;
-          height: 20px;
+          color: $white;
           font-size: 20px;
+          height: 20px;
+          margin-top: -12px;
+          position: absolute;
           text-align: center;
           top: 50%;
-          margin-top: -12px;
-          color: $white;
+          width: 100%;
 
           i {
             margin-top: -12px;
@@ -373,21 +373,21 @@ section {
     }
 
     .portfolio-caption {
-      max-width: 400px;
-      margin: 0 auto;
       background-color: $white;
-      text-align: center;
+      margin: 0 auto;
+      max-width: 400px;
       padding: 25px;
+      text-align: center;
 
       h4 {
-        text-transform: none;
         margin: 0;
+        text-transform: none;
       }
 
       p {
         @include serif-font;
-        font-style: italic;
         font-size: 16px;
+        font-style: italic;
         margin: 0;
       }
     }
@@ -397,6 +397,7 @@ section {
     z-index: 2;
   }
 }
+
 @media(min-width:767px) {
   #portfolio {
     .portfolio-item {
@@ -404,6 +405,7 @@ section {
     }
   }
 }
+
 // Timeline
 .timeline {
   list-style: none;
@@ -411,20 +413,20 @@ section {
   position: relative;
 
   &:before {
-    top: 0;
-    bottom: 0;
-    position: absolute;
-    content: '';
-    width: 2px;
     background-color: #f1f1f1;
+    bottom: 0;
+    content: '';
     left: 40px;
     margin-left: -1.5px;
+    position: absolute;
+    top: 0;
+    width: 2px;
   }
 
   > li {
     margin-bottom: 50px;
-    position: relative;
     min-height: 50px;
+    position: relative;
 
     &:after,
     &:before {
@@ -437,11 +439,11 @@ section {
     }
 
     .timeline-panel {
-      width: 100%;
       float: right;
       padding: 0 20px 0 100px;
       position: relative;
       text-align: left;
+      width: 100%;
 
       &:before {
         border-left-width: 0;
@@ -459,29 +461,29 @@ section {
     }
 
     .timeline-image {
-      left: 0;
-      margin-left: 0;
-      width: 80px;
-      height: 80px;
-      position: absolute;
-      z-index: 100;
       background-color: $theme-primary;
-      color: $white;
       border-radius: 100%;
       border: 7px solid #f1f1f1;
+      color: $white;
+      height: 80px;
+      left: 0;
+      margin-left: 0;
+      position: absolute;
       text-align: center;
+      width: 80px;
+      z-index: 100;
 
       h4 {
         font-size: 10px;
-        margin-top: 12px;
         line-height: 14px;
+        margin-top: 12px;
       }
     }
 
     &.timeline-inverted > .timeline-panel {
       float: right;
-      text-align: left;
       padding: 0 20px 0 100px;
+      text-align: left;
 
       &:before {
         border-left-width: 0;
@@ -505,8 +507,8 @@ section {
 
   .timeline-heading {
     h4 {
-      margin-top: 0;
       color: inherit;
+      margin-top: 0;
 
       &.subheading {
         text-transform: none;
@@ -515,12 +517,13 @@ section {
   }
 
   .timeline-body {
-     > ul,
+    > ul,
     > p {
       margin-bottom: 0;
     }
   }
 }
+
 @media(min-width:768px) {
   .timeline {
     &:before {
@@ -532,33 +535,34 @@ section {
       min-height: 100px;
 
       .timeline-panel {
-        width: 41%;
         float: left;
         padding: 0 20px 20px 30px;
         text-align: right;
+        width: 41%;
       }
 
       .timeline-image {
-        width: 100px;
         height: 100px;
         left: 50%;
         margin-left: -50px;
+        width: 100px;
 
         h4 {
           font-size: 13px;
-          margin-top: 16px;
           line-height: 18px;
+          margin-top: 16px;
         }
       }
 
       &.timeline-inverted > .timeline-panel {
         float: right;
-        text-align: left;
         padding: 0 30px 20px 20px;
+        text-align: left;
       }
     }
   }
 }
+
 @media(min-width:992px) {
   .timeline {
     > li {
@@ -569,14 +573,14 @@ section {
       }
 
       .timeline-image {
-        width: 150px;
         height: 150px;
         margin-left: -75px;
+        width: 150px;
 
         h4 {
           font-size: 18px;
-          margin-top: 30px;
           line-height: 26px;
+          margin-top: 30px;
         }
       }
 
@@ -586,6 +590,7 @@ section {
     }
   }
 }
+
 @media(min-width:1200px) {
   .timeline {
     > li {
@@ -596,9 +601,9 @@ section {
       }
 
       .timeline-image {
-        width: 170px;
         height: 170px;
         margin-left: -85px;
+        width: 170px;
 
         h4 {
           margin-top: 40px;
@@ -613,17 +618,17 @@ section {
 }
 // Team Section
 .team-member {
-  text-align: center;
   margin-bottom: 50px;
+  text-align: center;
 
   img {
-    margin: 0 auto;
     border: 7px solid $white;
+    margin: 0 auto;
   }
 
   h4 {
-    margin-top: 25px;
     margin-bottom: 0;
+    margin-top: 25px;
     text-transform: none;
   }
 
@@ -631,12 +636,14 @@ section {
     margin-top: 0;
   }
 }
+
 // Clients Aside
 aside.clients {
   img {
     margin: 50px auto;
   }
 }
+
 // Contact Section
 section#contact {
   background-color: $gray-darker;
@@ -677,23 +684,23 @@ section#contact {
   }
 
   :-moz-placeholder {
-    /* Firefox 18- */
+    // Firefox 18-
     @include heading-font;
-    font-weight: 700;
     color: $gray-lighter;
+    font-weight: 700;
   }
 
   ::-moz-placeholder {
-    /* Firefox 19+ */
+    // Firefox 18-
     @include heading-font;
-    font-weight: 700;
     color: $gray-lighter;
+    font-weight: 700;
   }
 
   :-ms-input-placeholder {
     @include heading-font;
-    font-weight: 700;
     color: $gray-lighter;
+    font-weight: 700;
   }
 
   .text-danger {
@@ -711,24 +718,24 @@ section#contact {
 
 .portfolio-modal {
   .modal-dialog {
-    margin: 0;
     height: 100%;
+    margin: 0;
     width: auto;
   }
 
   .modal-content {
-    border-radius: 0;
     background-clip: border-box;
+    border-radius: 0;
+    border: none;
     -webkit-box-shadow: none;
     box-shadow: none;
-    border: none;
     min-height: 100%;
     padding: 100px 0;
     text-align: center;
 
     h2 {
-      margin-bottom: 15px;
       font-size: 3em;
+      margin-bottom: 15px;
     }
 
     p {
@@ -736,10 +743,10 @@ section#contact {
     }
 
     p.item-intro {
-      margin: 20px 0 30px;
       @include serif-font;
-      font-style: italic;
       font-size: 16px;
+      font-style: italic;
+      margin: 20px 0 30px;
     }
 
     ul.list-inline {
@@ -753,13 +760,13 @@ section#contact {
   }
 
   .close-modal {
-    position: absolute;
-    width: 75px;
-    height: 75px;
     background-color: transparent;
-    top: 25px;
-    right: 25px;
     cursor: pointer;
+    height: 75px;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    width: 75px;
 
     &:hover {
       opacity: 0.3;
@@ -770,41 +777,41 @@ section#contact {
       width: 1px;
       margin-left: 35px;
       background-color: $gray-darker;
-      transform: rotate(45deg);
       -ms-transform: rotate(45deg);
       /* IE 9 */
       -webkit-transform: rotate(45deg);
       /* Safari and Chrome */
+      transform: rotate(45deg);
       z-index: 1051;
 
       .rl {
+        background-color: $gray-darker;
         height: 75px;
         width: 1px;
-        background-color: $gray-darker;
-        transform: rotate(90deg);
         -ms-transform: rotate(90deg);
         /* IE 9 */
         -webkit-transform: rotate(90deg);
         /* Safari and Chrome */
+        transform: rotate(90deg);
         z-index: 1052;
       }
     }
   }
 
   .modal-backdrop {
-    opacity: 0;
     display: none;
+    opacity: 0;
   }
 }
 // Highlight Color Customization
 ::-moz-selection {
-  text-shadow: none;
   background: $theme-primary;
+  text-shadow: none;
 }
 
 ::selection {
-  text-shadow: none;
   background: $theme-primary;
+  text-shadow: none;
 }
 
 img::selection {
@@ -816,5 +823,5 @@ img::-moz-selection {
 }
 
 body {
-  webkit-tap-highlight-color: $theme-primary;
+  -webkit-tap-highlight-color: $theme-primary;
 }

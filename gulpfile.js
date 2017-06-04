@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-// var less = require('gulp-less');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 var header = require('gulp-header');
@@ -8,6 +7,52 @@ var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var pkg = require('./package.json');
+
+// gulp packages for deploying to AWS
+var fs         = require("fs");
+var gzip       = require('gulp-gzip');
+var minifyCss  = require('gulp-minify-css');
+var awspublish = require('gulp-awspublish');
+var minifyHTML = require('gulp-minify-html');
+
+// parse AWS credentials
+aws = JSON.parse(fs.readFileSync('./aws.json'));
+// create instance of awspublish
+var publisher = awspublish.create(aws);
+
+
+// defining single task with name "deploy"
+gulp.task('deploy', function() {
+  // only copy desired files to dist folder
+  gulp.src('./css/**').pipe(gulp.dest('./dist/css'));
+  gulp.src('./img/**').pipe(gulp.dest('./dist/img'));
+  gulp.src('./js/**').pipe(gulp.dest('./dist/js'));
+  gulp.src('./vendor/**').pipe(gulp.dest('./dist/vendor'));
+  gulp.src('./*.html').pipe(gulp.dest('./dist'));
+
+  //minify css
+  gulp.src('./dist/css/*.css')
+    .pipe(minifyCss({compatibility: 'ie8'}))
+    .pipe(gulp.dest('./dist'));
+
+  //gzipping css
+  gulp.src('./dist/css/*.css')
+    .pipe(awspublish.gzip({ ext: '.gz' }))
+    .pipe(gulp.dest('./dist'));
+
+  //minifying html
+  gulp.src('./dist/*.html')
+    .pipe(minifyHTML({ conditionals: true, spare:true}))
+    .pipe(gulp.dest('./dist'));
+
+  var headers = { 'Cache-Control': 'max-age=315360000, no-transform, public' };
+
+  // push all the contents of ./dist folder to s3
+  gulp.src('./dist/**')
+    .pipe(publisher.publish(headers))
+    .pipe(publisher.sync())
+    .pipe(awspublish.reporter());
+})
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -94,7 +139,6 @@ gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js'], function() 
 });
 
 // Compiles SCSS files from /scss into /css
-// NOTE: This theme uses LESS by default. To swtich to SCSS you will need to update this gulpfile by changing the 'less' tasks to run 'sass'!
 gulp.task('sass', function() {
     return gulp.src('scss/agency.scss')
         .pipe(sass())
