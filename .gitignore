@@ -3,3 +3,5 @@ aws.json
 scss/.sass-cache
 scss/*.css
 scss/*.css.map
+dev
+dist
