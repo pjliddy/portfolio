@@ -1,21 +1,16 @@
 @import 'variables';
 @import 'mixins'; // Global Components
 
-body {
-  @include body-font;
-  overflow-x: hidden;
-}
+//
+//  Equal Height Columns
+//
 
-//
-//  Row with equal height columns
-//  -----------------------------
-//
 @media(min-width:768px) {
   .row-eq-height {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display:         flex;
+    display: flex;
     flex-wrap: wrap;
   }
   .row-eq-height > [class*='col-md-'] {
@@ -24,7 +19,144 @@ body {
   }
 }
 
-// Custom Navigation Bar
+//
+//  Global Section Styles
+//
+
+body {
+  @include body-font;
+  overflow-x: hidden;
+}
+
+footer {
+  background-color: $theme-base;
+  padding: 15px 0;
+
+  span.copyright {
+    @include heading-font;
+    color: $gray-lighter;
+    text-transform: none;
+  }
+}
+
+//
+//  Text Styles
+//
+
+.text-muted {
+  color: $gray-light;
+}
+
+.text-primary {
+  color: $theme-primary;
+}
+
+.text-base {
+  color: $theme-base;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.75;
+
+  .large {
+    font-size: 16px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include heading-font;
+  font-weight: 700;
+}
+
+//
+// Image Styles
+
+.img-centered {
+  margin: 0 auto;
+}
+
+//
+// Button Styles
+//
+
+.btn {
+  border-radius: 0;
+  font-weight: 700;
+}
+
+.btn.active,
+.btn:active,
+.btn:active:focus,
+.btn:focus {
+  outline: none;
+}
+
+.btn-default {
+  @include button-variant($gray-dark, $white, $gray-dark);
+}
+
+.btn-primary {
+  @include button-variant($theme-base, $theme-primary, $theme-base);
+}
+
+.btn-theme {
+  @include button-variant($theme-primary, $theme-base, $theme-primary);
+}
+
+.btn-lg {
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+.btn-xl {
+  font-size: 18px;
+  padding: 20px 40px;
+}
+
+.button-toolbar {
+  text-align: center;
+
+  button, a {
+    display: inline-block;
+    margin: 10px;
+  }
+}
+
+// Link Styles
+
+a,
+a.active,
+a:active,
+a:focus,
+a:hover {
+  outline: none;
+}
+
+a {
+  color: $theme-primary;
+}
+
+a.active,
+a:active,
+a:focus,
+a:hover {
+  color: darken($theme-primary, 10%);
+}
+
+
+
+//
+//  Navbar styles
+//
+
+//Custom Navigation Theme
+
 .navbar-custom {
   background-color: $theme-base;
   border-color: transparent;
@@ -95,6 +227,9 @@ body {
     color: $theme-base;
   }
 }
+
+// Responsive Navbar (> tablet)
+
 @media(min-width:768px) {
   .navbar-custom {
     background-color: transparent;
@@ -116,7 +251,9 @@ body {
     }
   }
 }
+
 // Navbar Change on Scroll
+
 @media(min-width:768px) {
   .navbar-custom.affix {
     background-color: $theme-base;
@@ -127,8 +264,10 @@ body {
     }
   }
 }
+
+
 //
-//  Header styles
+//  Header Styles
 //
 
 header {
@@ -168,6 +307,9 @@ header {
     }
   }
 }
+
+// Responsive Header (> tablet)
+
 @media(min-width:768px) {
   header {
     .intro-text {
@@ -175,7 +317,6 @@ header {
       padding-top: 150px;
 
       .intro-hash {
-        // color: $theme-primary;
         font-size: 96px;
       }
 
@@ -191,6 +332,9 @@ header {
     }
   }
 }
+
+// Responsive Header (> 992px)
+
 @media(min-width:992px) {
   header {
     .intro-text {
@@ -215,151 +359,11 @@ header {
     }
   }
 }
+
 //
-// Footer Styles
-//
-
-footer {
-  padding: 15px 0;
-  background-color: $theme-base;
-  // text-align: center;
-  span.copyright {
-    @include heading-font;
-    color: $gray-lighter;
-    text-transform: none;
-  }
-  //
-  // ul.quicklinks {
-  //   @include heading-font;
-  //   line-height: 40px;
-  //   margin-bottom: 0;
-  //   text-transform: none;
-  // }
-}
-// Social Buttons
-ul.social-buttons {
-  margin-bottom: 0;
-  text-align: center;
-
-  li {
-    a {
-      background-color: $theme-primary;
-      border-radius: 100%;
-      color: $theme-base;
-      display: block;
-      font-size: 30px;
-      height: 60px;
-      line-height: 60px;
-      outline: none;
-      width: 60px;
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
-      transition: all 0.3s;
-
-      &:active,
-      &:focus,
-      &:hover {
-        background-color: $white;
-        color: $theme-base;
-      }
-    }
-  }
-}
-//
-// Button Styles
-//
-
-.btn {
-  border-radius: 0;
-  font-weight: 700;
-}
-
-.btn-default {
-  @include button-variant($gray-dark, $white, $gray-dark);
-  // @include heading-font;
-}
-.btn-primary {
-  @include button-variant($theme-base, $theme-primary, $theme-base);
-  // @include heading-font;
-}
-
-.btn-theme {
-  @include button-variant($theme-primary, $theme-base, $theme-primary);
-  // @include heading-font;
-}
-
-.btn-lg {
-  font-size: 16px;
-  padding: 10px 20px;
-}
-
-.btn-xl {
-  font-size: 18px;
-  padding: 20px 40px;
-}
-
-.text-muted {
-  color: $gray-light;
-}
-
-.text-primary {
-  color: $theme-primary;
-}
-
-.text-base {
-  color: $theme-base;
-}
-
-p {
-  font-size: 16px;
-  line-height: 1.75;
-
-  .large {
-    font-size: 16px;
-  }
-}
-
-a,
-a.active,
-a:active,
-a:focus,
-a:hover {
-  outline: none;
-}
-
-a {
-  color: $theme-primary;
-}
-
-a.active,
-a:active,
-a:focus,
-a:hover {
-  color: darken($theme-primary, 10%);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @include heading-font;
-  font-weight: 700;
-}
-
-.img-centered {
-  margin: 0 auto;
-}
-
-.bg-light-gray {
-  background-color: $gray-lighter;
-}
-
-.bg-darkest-gray {
-  background-color: $gray-darker;
-}
 // Global Section Styles
+//
+
 section {
   padding: 75px 0;
 
@@ -371,7 +375,6 @@ section {
 
   h3.section-subheading {
     font-size: 18px;
-    // font-style: italic;
     font-weight: 400;
     line-height: 1.5;
     margin-bottom: 15px;
@@ -379,108 +382,41 @@ section {
     padding-right: 15px;
     text-transform: none;
   }
+
   h3.section-subheading:last-child {
     margin-bottom: 75px;
   }
 }
+
+// Section Responsive Styles (> tablet)
+
 @media(min-width:768px) {
   section {
     padding: 100px 0;
   }
 }
-// skills Section
 
-.skill-heading {
+//
+// Skills Section
+//
+
+.skills-heading {
   margin: 15px 0;
-  text-transform: none;
+  // text-transform: none;
 }
+
+//
 // Experience Section
+//
+
 #experience {
   background: $background-tint;
 }
-// Portfolio Section
-#portfolio {
-  background-color: $white;
 
-  .portfolio-item {
-    margin: 0 0 15px;
-    right: 0;
+//
+// Timeline Styles
+//
 
-    .portfolio-link {
-      display: block;
-      margin: 0 auto;
-      max-width: 400px;
-      position: relative;
-
-      .portfolio-hover {
-        background: fade-out($theme-primary, .25);
-        height: 100%;
-        opacity: 0;
-        position: absolute;
-        width: 100%;
-        -webkit-transition: all ease 0.25s;
-        -moz-transition: all ease 0.25s;
-        transition: all ease 0.25s;
-
-        &:hover {
-          opacity: 1;
-        }
-
-        .portfolio-hover-content {
-          color: $white;
-          font-size: 20px;
-          height: 20px;
-          margin-top: -12px;
-          position: absolute;
-          text-align: center;
-          top: 50%;
-          width: 100%;
-
-          i {
-            margin-top: -12px;
-          }
-
-          h3,
-          h4 {
-            margin: 0;
-          }
-        }
-      }
-    }
-
-    .portfolio-caption {
-      background-color: $white;
-      margin: 0 auto;
-      max-width: 400px;
-      padding: 25px;
-      text-align: center;
-
-      h4 {
-        margin: 0;
-        text-transform: none;
-      }
-
-      p {
-        @include serif-font;
-        font-size: 16px;
-        font-style: italic;
-        margin: 0;
-      }
-    }
-  }
-
-  * {
-    z-index: 2;
-  }
-}
-@media(min-width:767px) {
-  #portfolio {
-    .portfolio-item {
-      margin: 0 0 30px;
-    }
-  }
-}
-// Timeline
 .timeline {
   list-style: none;
   padding: 0;
@@ -605,6 +541,9 @@ section {
     }
   }
 }
+
+// Responsive Timeline Styles (>tablet)
+
 @media(min-width:768px) {
   .timeline {
     &:before {
@@ -647,6 +586,9 @@ section {
     }
   }
 }
+
+// Responsive Timeline Styles (>992)
+
 @media(min-width:992px) {
   .timeline {
     > li {
@@ -678,6 +620,9 @@ section {
     }
   }
 }
+
+// Responsive Timeline Styles (>1200)
+
 @media(min-width:1200px) {
   .timeline {
     > li {
@@ -703,35 +648,101 @@ section {
     }
   }
 }
-// Team Section
 
-.team-member {
-  margin-bottom: 50px;
-  text-align: center;
+//
+// Portfolio Section
+//
 
-  img {
-    border: 7px solid $white;
-    margin: 0 auto;
+#portfolio {
+  background-color: $white;
+
+  .portfolio-item {
+    margin: 0 0 15px;
+    right: 0;
+
+    .portfolio-link {
+      display: block;
+      margin: 0 auto;
+      max-width: 400px;
+      position: relative;
+
+      .portfolio-hover {
+        background: fade-out($theme-primary, .25);
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        -webkit-transition: all ease 0.25s;
+        -moz-transition: all ease 0.25s;
+        transition: all ease 0.25s;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        .portfolio-hover-content {
+          color: $white;
+          font-size: 20px;
+          height: 20px;
+          margin-top: -12px;
+          position: absolute;
+          text-align: center;
+          top: 50%;
+          width: 100%;
+
+          i {
+            margin-top: -12px;
+          }
+
+          h3,
+          h4 {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .portfolio-caption {
+      background-color: $white;
+      margin: 0 auto;
+      max-width: 400px;
+      padding: 25px;
+      text-align: center;
+
+      h4 {
+        margin: 0;
+        text-transform: none;
+      }
+
+      p {
+        @include serif-font;
+        font-size: 16px;
+        font-style: italic;
+        margin: 0;
+      }
+    }
   }
 
-  h4 {
-    margin-bottom: 0;
-    margin-top: 25px;
-    text-transform: none;
-  }
-
-  p {
-    margin-top: 0;
+  * {
+    z-index: 2;
   }
 }
-// Clients Aside
-aside.clients {
-  img {
-    margin: 50px auto;
+
+// Responsive Portfolio Styles (>tablet)
+
+@media(min-width:767px) {
+  #portfolio {
+    .portfolio-item {
+      margin: 0 0 30px;
+    }
   }
 }
-// Contact Section
-section#contact {
+
+//
+// Contact Styles
+//
+
+#contact {
   background-color: $theme-base;
   background-image: url('../img/map-image.png');
   background-position: center;
@@ -745,76 +756,40 @@ section#contact {
     color: $gray-lighter;
     font-style: normal;
   }
-
-  .form-group {
-    margin-bottom: 25px;
-
-    input,
-    textarea {
-      padding: 20px;
-    }
-
-    input.form-control {
-      height: auto;
-    }
-
-    textarea.form-control {
-      height: 236px;
-    }
-  }
-
-  .form-control:focus {
-    border-color: $theme-primary;
-    box-shadow: none;
-  }
-
-  ::-webkit-input-placeholder {
-    @include heading-font;
-    font-weight: 700;
-    color: $gray-lighter;
-  }
-
-  :-moz-placeholder {
-    // Firefox 18-
-    @include heading-font;
-    color: $gray-lighter;
-    font-weight: 700;
-  }
-
-  ::-moz-placeholder {
-    // Firefox 18-
-    @include heading-font;
-    color: $gray-lighter;
-    font-weight: 700;
-  }
-
-  :-ms-input-placeholder {
-    @include heading-font;
-    color: $gray-lighter;
-    font-weight: 700;
-  }
-
-  .text-danger {
-    color: $theme-danger;
-  }
 }
 
-.btn.active,
-.btn:active,
-.btn:active:focus,
-.btn:focus {
-  outline: none;
-}
+// Social Buttons
 
-.button-toolbar {
+.social-buttons {
+  margin-bottom: 0;
   text-align: center;
 
-  button, a {
-    display: inline-block;
-    margin: 10px;
+  li a {
+    background-color: $theme-primary;
+    border-radius: 100%;
+    color: $theme-base;
+    display: block;
+    font-size: 30px;
+    height: 60px;
+    line-height: 60px;
+    outline: none;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    width: 60px;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: $white;
+      color: $theme-base;
+    }
   }
 }
 
+//
+// Portfolio Modal Styles
+//
 
 .portfolio-modal {
   .modal-dialog {
@@ -832,13 +807,11 @@ section#contact {
     box-shadow: none;
     height: auto;
     min-height: 100%;
-    // padding:0;
     padding: 30px 0;
     text-align: center;
-    // width: 100%;
+
     h2 {
       font-size: 3em;
-      // margin-bottom: 15px;
     }
 
     p {
@@ -851,10 +824,7 @@ section#contact {
       font-style: italic;
       margin-bottom: 30px;
     }
-    // ul.list-inline {
-    //   margin-bottom: 30px;
-    //   margin-top: 0;
-    // }
+
     li {
       list-style: none;
     }
@@ -894,30 +864,30 @@ section#contact {
     z-index: 1051;
 
     &:hover {
-      opacity: 0.3;
+      opacity: .3;
     }
 
     .lr {
-      height: 45px;
-      width: 1px;
-      margin-left: 30px;
       background-color: $gray-darker;
+      height: 45px;
+      margin-left: 30px;
       -ms-transform: rotate(45deg);
       /* IE 9 */
       -webkit-transform: rotate(45deg);
       /* Safari and Chrome */
       transform: rotate(45deg);
+      width: 1px;
       z-index: 1051;
 
       .rl {
         background-color: $gray-darker;
         height: 45px;
-        width: 1px;
         -ms-transform: rotate(90deg);
         /* IE 9 */
         -webkit-transform: rotate(90deg);
         /* Safari and Chrome */
         transform: rotate(90deg);
+        width: 1px;
         z-index: 1052;
       }
     }
@@ -925,25 +895,12 @@ section#contact {
 
   .modal-backdrop {
     display: none;
-    opacity: 0.5;
+    opacity: .5;
   }
 }
-// Responsive Modal Styles
-@media(min-width:640px) {
-  .portfolio-modal {
-    // .modal-dialog {
-    //   margin: 15px;
-    // }
-  }
-}
-@media(min-width:992px) {
-  .portfolio-modal {
-    .modal-dialog {
-      // margin: 30px;
-    }
-  }
-}
+
 // Highlight Color Customization
+
 ::-moz-selection {
   background: $theme-primary;
   text-shadow: none;
