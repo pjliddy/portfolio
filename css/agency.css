@@ -160,6 +160,43 @@ ul.social-buttons {
   border-radius: 0;
   font-weight: 700; }
 
+.btn-default {
+  color: #333333;
+  background-color: white;
+  border-color: #333333; }
+  .btn-default:focus, .btn-default.focus {
+    background-color: #e6e6e6;
+    border-color: black;
+    color: #333333; }
+  .btn-default:hover {
+    background-color: #e6e6e6;
+    border-color: #141414;
+    color: #333333; }
+  .btn-default:active, .btn-default.active,
+  .open > .btn-default.dropdown-toggle {
+    background-color: #e6e6e6;
+    border-color: #141414;
+    color: #333333; }
+    .btn-default:active:hover, .btn-default:active:focus, .btn-default:active.focus, .btn-default.active:hover, .btn-default.active:focus, .btn-default.active.focus,
+    .open > .btn-default.dropdown-toggle:hover,
+    .open > .btn-default.dropdown-toggle:focus,
+    .open > .btn-default.dropdown-toggle.focus {
+      background-color: #d4d4d4;
+      border-color: black;
+      color: #333333; }
+  .btn-default:active, .btn-default.active,
+  .open > .btn-default.dropdown-toggle {
+    background-image: none; }
+  .btn-default.disabled:hover, .btn-default.disabled:focus, .btn-default.disabled.focus, .btn-default[disabled]:hover, .btn-default[disabled]:focus, .btn-default[disabled].focus,
+  fieldset[disabled] .btn-default:hover,
+  fieldset[disabled] .btn-default:focus,
+  fieldset[disabled] .btn-default.focus {
+    background-color: white;
+    border-color: #333333; }
+  .btn-default .badge {
+    background-color: #333333;
+    color: white; }
+
 .btn-primary {
   color: #002743;
   background-color: #fed136;
@@ -299,12 +336,15 @@ section {
     margin-bottom: 15px;
     margin-top: 0; }
   section h3.section-subheading {
-    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    font-style: italic;
+    font-size: 18px;
     font-weight: 400;
-    margin-bottom: 75px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
     text-transform: none; }
+  section h3.section-subheading:last-child {
+    margin-bottom: 75px; }
 
 @media (min-width: 768px) {
   section {

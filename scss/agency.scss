@@ -255,6 +255,10 @@ ul.social-buttons {
   font-weight: 700;
 }
 
+.btn-default {
+  @include button-variant($gray-dark, $white, $gray-dark);
+  // @include heading-font;
+}
 .btn-primary {
   @include button-variant($theme-base, $theme-primary, $theme-base);
   // @include heading-font;
@@ -347,12 +351,17 @@ section {
   }
 
   h3.section-subheading {
-    @include serif-font;
-    font-size: 16px;
-    font-style: italic;
+    font-size: 18px;
+    // font-style: italic;
     font-weight: 400;
-    margin-bottom: 75px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
     text-transform: none;
+  }
+  h3.section-subheading:last-child {
+    margin-bottom: 75px;
   }
 }
 @media(min-width:768px) {
