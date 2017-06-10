@@ -4,7 +4,6 @@
 $white:           white;
 $theme-base:      #002743;
 $theme-primary:   #fed136;
-
 $theme-danger:    #e74c3c;
 
 $gray-base:       #000 !default;
@@ -17,3 +16,4 @@ $gray-lighter:    lighten($gray-base, 75%) !default; // #eee
 $font-family-base:  "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 $image-hero: url('../img/hero-duo.jpg');
+$background-tint: fade-out($theme-base, .9);

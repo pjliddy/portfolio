@@ -246,6 +246,11 @@ ul.social-buttons {
   @include heading-font;
 }
 
+.btn-theme {
+  @include button-variant($theme-primary, $theme-base, $theme-primary);
+  @include heading-font;
+}
+
 .btn-xl {
   @include button-variant($theme-base, $theme-primary, $theme-base);
   @include heading-font;
@@ -342,14 +347,22 @@ section {
     padding: 100px 0;
   }
 }
-// Services Section
-.service-heading {
+// skills Section
+.skill-heading {
   margin: 15px 0;
   text-transform: none;
 }
 
+// Experience Section
+
+#experience {
+  background: $background-tint;
+}
+
 // Portfolio Section
 #portfolio {
+  background-color: $white;
+
   .portfolio-item {
     margin: 0 0 15px;
     right: 0;
@@ -361,14 +374,14 @@ section {
       position: relative;
 
       .portfolio-hover {
-        background: fade-out($theme-primary, .9);
+        background: fade-out($theme-primary, .25);
         height: 100%;
         opacity: 0;
         position: absolute;
         width: 100%;
-        -webkit-transition: all ease 0.5s;
-        -moz-transition: all ease 0.5s;
-        transition: all ease 0.5s;
+        -webkit-transition: all ease 0.25s;
+        -moz-transition: all ease 0.25s;
+        transition: all ease 0.25s;
 
         &:hover {
           opacity: 1;
@@ -436,15 +449,16 @@ section {
   padding: 0;
   position: relative;
 
+
   &:before {
-    background-color: #f1f1f1;
+    background-color: fade-out($theme-base, .8);
     bottom: 0;
     content: '';
     left: 40px;
     margin-left: -1.5px;
     position: absolute;
     top: 0;
-    width: 2px;
+    width: 4px;
   }
 
   > li {
@@ -487,7 +501,7 @@ section {
     .timeline-image {
       background-color: $theme-primary;
       border-radius: 100%;
-      border: 7px solid #f1f1f1;
+      border: 7px solid $theme-primary;
       color: $white;
       height: 80px;
       left: 0;
@@ -502,6 +516,10 @@ section {
         line-height: 14px;
         margin-top: 12px;
       }
+    }
+
+    &.timeline-inverted .timeline-image {
+      border-color: $theme-base;
     }
 
     &.timeline-inverted > .timeline-panel {
@@ -526,6 +544,10 @@ section {
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    .timeline-button {
+      padding-top: 20px;
     }
   }
 
@@ -583,6 +605,10 @@ section {
         padding: 0 30px 20px 20px;
         text-align: left;
       }
+
+      .timeline-button {
+        padding-top: 32px;
+      }
     }
   }
 }
@@ -611,6 +637,11 @@ section {
       &.timeline-inverted > .timeline-panel {
         padding: 0 20px 20px;
       }
+
+      .timeline-button {
+        padding-top: 60px;
+      }
+
     }
   }
 }
