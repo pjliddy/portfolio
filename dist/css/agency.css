@@ -120,17 +120,12 @@ header {
       margin-bottom: 50px; } }
 
 footer {
-  padding: 25px 0; }
+  padding: 15px 0;
+  background-color: #002743; }
   footer span.copyright {
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
-    line-height: 40px;
-    text-transform: none; }
-  footer ul.quicklinks {
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
-    line-height: 40px;
-    margin-bottom: 0;
+    color: #bfbfbf;
     text-transform: none; }
 
 ul.social-buttons {
@@ -150,8 +145,8 @@ ul.social-buttons {
     -moz-transition: all 0.3s;
     transition: all 0.3s; }
     ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
-      background-color: #002743;
-      color: #fed136; }
+      background-color: white;
+      color: #002743; }
 
 .btn {
   border-radius: 0;
@@ -566,7 +561,7 @@ aside.clients img {
   margin: 50px auto; }
 
 section#contact {
-  background-color: #222222;
+  background-color: #002743;
   background-image: url("../img/map-image.png");
   background-position: center;
   background-repeat: no-repeat; }
