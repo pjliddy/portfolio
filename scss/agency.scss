@@ -236,19 +236,20 @@ ul.social-buttons {
 // Button Styles
 //
 
+.btn {
+  border-radius: 0;
+  font-weight: 700;
+}
+
 .btn-primary {
   @include button-variant($theme-base, $theme-primary, $theme-base);
   @include heading-font;
-  border-radius: 0px;
-  font-weight: 700;
 }
 
 .btn-xl {
   @include button-variant($theme-base, $theme-primary, $theme-base);
   @include heading-font;
-  border-radius: 0px;
   font-size: 18px;
-  font-weight: 700;
   padding: 20px 40px;
 }
 
@@ -742,10 +743,12 @@ section#contact {
 }
 
 .portfolio-modal {
+
   .modal-dialog {
     height: 100%;
     margin: 0;
-    width: auto;
+    padding: 0;
+    width: 100%;
   }
 
   .modal-content {
@@ -754,33 +757,63 @@ section#contact {
     border: none;
     -webkit-box-shadow: none;
     box-shadow: none;
+    height: auto;
     min-height: 100%;
-    padding: 100px 0;
+    // padding:0;
+    padding: 30px 0;
     text-align: center;
+    // width: 100%;
 
     h2 {
       font-size: 3em;
-      margin-bottom: 15px;
+      // margin-bottom: 15px;
     }
 
     p {
-      margin-bottom: 30px;
+      margin-bottom: 15px;
     }
 
     p.item-intro {
       @include serif-font;
       font-size: 16px;
       font-style: italic;
-      margin: 20px 0 30px;
+      margin-bottom: 30px;
     }
 
-    ul.list-inline {
+    // ul.list-inline {
+    //   margin-bottom: 30px;
+    //   margin-top: 0;
+    // }
+
+    li {
+      list-style: none;
+    }
+    ul {
       margin-bottom: 30px;
       margin-top: 0;
+      padding-left: 0;
     }
 
     img {
+      border: 1px solid $gray-light;
       margin-bottom: 30px;
+    }
+
+    .modal-label {
+      font-weight:600;
+    }
+
+    .modal-right {
+      text-align: left;
+    }
+
+    .modal-buttons {
+      text-align: center;
+
+      button {
+        display: inline-block;
+        margin: 15px;
+      }
     }
   }
 
@@ -789,18 +822,20 @@ section#contact {
     cursor: pointer;
     height: 75px;
     position: absolute;
-    right: 25px;
-    top: 25px;
-    width: 75px;
+    right: 15px;
+    top: 15px;
+    width: 60px;
+    z-index: 1051;
+
 
     &:hover {
-      opacity: 0.3;
+      opacity: .3;
     }
 
     .lr {
-      height: 75px;
+      height: 45px;
       width: 1px;
-      margin-left: 35px;
+      margin-left: 30px;
       background-color: $gray-darker;
       -ms-transform: rotate(45deg);
       /* IE 9 */
@@ -811,7 +846,7 @@ section#contact {
 
       .rl {
         background-color: $gray-darker;
-        height: 75px;
+        height: 45px;
         width: 1px;
         -ms-transform: rotate(90deg);
         /* IE 9 */
@@ -825,9 +860,27 @@ section#contact {
 
   .modal-backdrop {
     display: none;
-    opacity: 0;
+    opacity: .5;
   }
 }
+
+// Responsive Modal Styles
+@media(min-width:640px) {
+  .portfolio-modal {
+    // .modal-dialog {
+    //   margin: 15px;
+    // }
+  }
+}
+
+@media(min-width:992px) {
+  .portfolio-modal {
+    .modal-dialog {
+      // margin: 30px;
+    }
+  }
+}
+
 // Highlight Color Customization
 ::-moz-selection {
   background: $theme-primary;

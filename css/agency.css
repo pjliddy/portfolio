@@ -153,14 +153,16 @@ ul.social-buttons {
       background-color: #002743;
       color: #fed136; }
 
+.btn {
+  border-radius: 0;
+  font-weight: 700; }
+
 .btn-primary {
   color: #002743;
   background-color: #fed136;
   border-color: #002743;
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  border-radius: 0px;
-  font-weight: 700; }
+  text-transform: uppercase; }
   .btn-primary:focus, .btn-primary.focus {
     background-color: #fec503;
     border-color: black;
@@ -200,9 +202,7 @@ ul.social-buttons {
   border-color: #002743;
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  border-radius: 0px;
   font-size: 18px;
-  font-weight: 700;
   padding: 20px 40px; }
   .btn-xl:focus, .btn-xl.focus {
     background-color: #fec503;
@@ -565,7 +565,8 @@ section#contact {
 .portfolio-modal .modal-dialog {
   height: 100%;
   margin: 0;
-  width: auto; }
+  padding: 0;
+  width: 100%; }
 
 .portfolio-modal .modal-content {
   background-clip: border-box;
@@ -573,39 +574,53 @@ section#contact {
   border: none;
   -webkit-box-shadow: none;
   box-shadow: none;
+  height: auto;
   min-height: 100%;
-  padding: 100px 0;
+  padding: 30px 0;
   text-align: center; }
   .portfolio-modal .modal-content h2 {
-    font-size: 3em;
-    margin-bottom: 15px; }
+    font-size: 3em; }
   .portfolio-modal .modal-content p {
-    margin-bottom: 30px; }
+    margin-bottom: 15px; }
   .portfolio-modal .modal-content p.item-intro {
     font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-style: italic;
-    margin: 20px 0 30px; }
-  .portfolio-modal .modal-content ul.list-inline {
-    margin-bottom: 30px;
-    margin-top: 0; }
-  .portfolio-modal .modal-content img {
     margin-bottom: 30px; }
+  .portfolio-modal .modal-content li {
+    list-style: none; }
+  .portfolio-modal .modal-content ul {
+    margin-bottom: 30px;
+    margin-top: 0;
+    padding-left: 0; }
+  .portfolio-modal .modal-content img {
+    border: 1px solid #777777;
+    margin-bottom: 30px; }
+  .portfolio-modal .modal-content .modal-label {
+    font-weight: 600; }
+  .portfolio-modal .modal-content .modal-right {
+    text-align: left; }
+  .portfolio-modal .modal-content .modal-buttons {
+    text-align: center; }
+    .portfolio-modal .modal-content .modal-buttons button {
+      display: inline-block;
+      margin: 15px; }
 
 .portfolio-modal .close-modal {
   background-color: transparent;
   cursor: pointer;
   height: 75px;
   position: absolute;
-  right: 25px;
-  top: 25px;
-  width: 75px; }
+  right: 15px;
+  top: 15px;
+  width: 60px;
+  z-index: 1051; }
   .portfolio-modal .close-modal:hover {
-    opacity: 0.3; }
+    opacity: .3; }
   .portfolio-modal .close-modal .lr {
-    height: 75px;
+    height: 45px;
     width: 1px;
-    margin-left: 35px;
+    margin-left: 30px;
     background-color: #222222;
     -ms-transform: rotate(45deg);
     /* IE 9 */
@@ -615,7 +630,7 @@ section#contact {
     z-index: 1051; }
     .portfolio-modal .close-modal .lr .rl {
       background-color: #222222;
-      height: 75px;
+      height: 45px;
       width: 1px;
       -ms-transform: rotate(90deg);
       /* IE 9 */
@@ -626,7 +641,7 @@ section#contact {
 
 .portfolio-modal .modal-backdrop {
   display: none;
-  opacity: 0; }
+  opacity: .5; }
 
 ::-moz-selection {
   background: #fed136;
