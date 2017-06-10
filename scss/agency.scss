@@ -5,6 +5,25 @@ body {
   @include body-font;
   overflow-x: hidden;
 }
+
+//
+//  Row with equal height columns
+//  -----------------------------
+//
+@media(min-width:768px) {
+  .row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+    flex-wrap: wrap;
+  }
+  .row-eq-height > [class*='col-md-'] {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 // Custom Navigation Bar
 .navbar-custom {
   background-color: $theme-base;

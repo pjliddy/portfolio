@@ -7,6 +7,17 @@ body {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow-x: hidden; }
 
+@media (min-width: 768px) {
+  .row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap; }
+  .row-eq-height > [class*='col-md-'] {
+    display: flex;
+    flex-direction: column; } }
+
 .navbar-custom {
   background-color: #002743;
   border-color: transparent; }
