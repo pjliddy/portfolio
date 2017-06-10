@@ -38,9 +38,9 @@ body {
       color: #fed136;
       outline: none; }
   .navbar-custom .navbar-nav > .active > a {
-    background-color: #002743;
+    background-color: #fed136;
     border-radius: 0;
-    color: white;
+    color: #002743;
     font-weight: 500; }
   .navbar-custom .navbar-nav > .active > a:focus,
   .navbar-custom .navbar-nav > .active > a:hover {
@@ -486,8 +486,8 @@ section {
     margin-top: 0; }
     .timeline .timeline-heading h4.subheading {
       text-transform: none; }
-  .timeline .timeline-body > ul,
-  .timeline .timeline-body > p {
+  .timeline .timeline-body > p,
+  .timeline .timeline-body > ul {
     margin-bottom: 0; }
 
 @media (min-width: 768px) {
@@ -672,7 +672,7 @@ section#contact {
   width: 60px;
   z-index: 1051; }
   .portfolio-modal .close-modal:hover {
-    opacity: .3; }
+    opacity: 0.3; }
   .portfolio-modal .close-modal .lr {
     height: 45px;
     width: 1px;
@@ -697,7 +697,7 @@ section#contact {
 
 .portfolio-modal .modal-backdrop {
   display: none;
-  opacity: .5; }
+  opacity: 0.5; }
 
 ::-moz-selection {
   background: #fed136;
