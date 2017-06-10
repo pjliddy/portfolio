@@ -596,6 +596,8 @@ section#contact {
   .portfolio-modal .modal-content img {
     border: 1px solid #777777;
     margin-bottom: 30px; }
+  .portfolio-modal .modal-content .no-border {
+    border: 0; }
   .portfolio-modal .modal-content .modal-label {
     font-weight: 600; }
   .portfolio-modal .modal-content .modal-right {

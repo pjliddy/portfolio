@@ -317,8 +317,6 @@ h6 {
   background-color: $gray-darker;
 }
 
-
-
 // Global Section Styles
 section {
   padding: 100px 0;
@@ -797,6 +795,10 @@ section#contact {
     img {
       border: 1px solid $gray-light;
       margin-bottom: 30px;
+    }
+
+    .no-border {
+      border: 0;
     }
 
     .modal-label {
