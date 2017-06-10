@@ -175,8 +175,8 @@ header {
 @media(min-width:992px) {
   header {
     .intro-text {
-      // padding-bottom: 230px;
-      // padding-top: 190px;
+      padding-bottom: 220px;
+      padding-top: 160px;
 
       .intro-hash {
         // color: $theme-primary;
@@ -256,12 +256,12 @@ ul.social-buttons {
 }
 
 .btn-primary {
-  @include button-variant($theme-base, $theme-primary, $theme-primary);
+  @include button-variant($theme-base, $theme-primary, $theme-base);
   // @include heading-font;
 }
 
 .btn-theme {
-  @include button-variant($theme-primary, $theme-base, $theme-base);
+  @include button-variant($theme-primary, $theme-base, $theme-primary);
   // @include heading-font;
 }
 
