@@ -209,15 +209,15 @@ ul.social-buttons {
 
   li {
     a {
-      background-color: $theme-base;
+      background-color: $theme-primary;
       border-radius: 100%;
-      color: $white;
+      color: $theme-base;
       display: block;
-      font-size: 20px;
-      height: 40px;
-      line-height: 40px;
+      font-size: 30px;
+      height: 60px;
+      line-height: 60px;
       outline: none;
-      width: 40px;
+      width: 60px;
       -webkit-transition: all 0.3s;
       -moz-transition: all 0.3s;
       transition: all 0.3s;
@@ -319,7 +319,7 @@ h6 {
 
 // Global Section Styles
 section {
-  padding: 100px 0;
+  padding: 75px 0;
 
   h2.section-heading {
     font-size: 40px;
@@ -339,7 +339,7 @@ section {
 
 @media(min-width:768px) {
   section {
-    padding: 150px 0;
+    padding: 100px 0;
   }
 }
 // Services Section
@@ -678,6 +678,12 @@ section#contact {
   .section-heading {
     color: $white;
   }
+
+  h3.section-subheading {
+    color: $gray-lighter;
+    font-style: normal;
+  }
+
 
   .form-group {
     margin-bottom: 25px;

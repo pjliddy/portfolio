@@ -137,15 +137,15 @@ ul.social-buttons {
   margin-bottom: 0;
   text-align: center; }
   ul.social-buttons li a {
-    background-color: #002743;
+    background-color: #fed136;
     border-radius: 100%;
-    color: white;
+    color: #002743;
     display: block;
-    font-size: 20px;
-    height: 40px;
-    line-height: 40px;
+    font-size: 30px;
+    height: 60px;
+    line-height: 60px;
     outline: none;
-    width: 40px;
+    width: 60px;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s; }
@@ -282,13 +282,13 @@ h6 {
   margin: 0 auto; }
 
 .bg-light-gray {
-  background-color: #eeeeee; }
+  background-color: #bfbfbf; }
 
 .bg-darkest-gray {
   background-color: #222222; }
 
 section {
-  padding: 100px 0; }
+  padding: 75px 0; }
   section h2.section-heading {
     font-size: 40px;
     margin-bottom: 15px;
@@ -303,7 +303,7 @@ section {
 
 @media (min-width: 768px) {
   section {
-    padding: 150px 0; } }
+    padding: 100px 0; } }
 
 .service-heading {
   margin: 15px 0;
@@ -521,6 +521,9 @@ section#contact {
   background-repeat: no-repeat; }
   section#contact .section-heading {
     color: white; }
+  section#contact h3.section-subheading {
+    color: #bfbfbf;
+    font-style: normal; }
   section#contact .form-group {
     margin-bottom: 25px; }
     section#contact .form-group input,
@@ -537,21 +540,21 @@ section#contact {
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
-    color: #eeeeee; }
+    color: #bfbfbf; }
   section#contact :-moz-placeholder {
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
-    color: #eeeeee;
+    color: #bfbfbf;
     font-weight: 700; }
   section#contact ::-moz-placeholder {
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
-    color: #eeeeee;
+    color: #bfbfbf;
     font-weight: 700; }
   section#contact :-ms-input-placeholder {
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
-    color: #eeeeee;
+    color: #bfbfbf;
     font-weight: 700; }
   section#contact .text-danger {
     color: #e74c3c; }
