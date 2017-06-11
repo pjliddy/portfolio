@@ -1,0 +1,12 @@
+node_modules
+aws.json
+scss/.sass-cache
+scss/*.css
+scss/*.css.map
+<<<<<<< HEAD
+dist/
+dev/
+=======
+dev
+dist
+>>>>>>> development
