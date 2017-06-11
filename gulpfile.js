@@ -26,6 +26,7 @@ gulp.task('deploy', function() {
   // only copy desired files to dist folder
   gulp.src('./css/**').pipe(gulp.dest('./dist/css'));
   gulp.src('./img/**').pipe(gulp.dest('./dist/img'));
+  gulp.src('./pdf/**').pipe(gulp.dest('./dist/pdf'));
   gulp.src('./js/**').pipe(gulp.dest('./dist/js'));
   gulp.src('./vendor/**').pipe(gulp.dest('./dist/vendor'));
   gulp.src('./*.html').pipe(gulp.dest('./dist'));
