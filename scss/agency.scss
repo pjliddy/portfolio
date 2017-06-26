@@ -660,6 +660,15 @@ section {
     margin: 0 0 15px;
     right: 0;
 
+    img {
+      border: 1px solid $gray-lighter;
+      // margin-bottom: 30px;
+    }
+
+    .no-border {
+      border: 0;
+    }
+
     .portfolio-link {
       display: block;
       margin: 0 auto;

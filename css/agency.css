@@ -500,6 +500,10 @@ section {
   #portfolio .portfolio-item {
     margin: 0 0 15px;
     right: 0; }
+    #portfolio .portfolio-item img {
+      border: 1px solid #bfbfbf; }
+    #portfolio .portfolio-item .no-border {
+      border: 0; }
     #portfolio .portfolio-item .portfolio-link {
       display: block;
       margin: 0 auto;
