@@ -7,15 +7,26 @@
 
 @media(min-width:768px) {
   .row-eq-height {
+    display: -ms-flexbox;
     display: -webkit-box;
     display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  .row-eq-height > [class*='col-md-'] {
+
+  .row-eq-height > .portfolio-item {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
     flex-direction: column;
+    flex:1 1 auto;
   }
 }
 
